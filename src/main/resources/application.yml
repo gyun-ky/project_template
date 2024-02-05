@@ -1,0 +1,78 @@
+spring:
+  profiles:
+    active: local
+    group:
+      "local": "local, local-confidential"
+      "dev": "dev, dev-confidential"
+      "stg": "stg, stg-confidential"
+      "prd": "prd, prd-confidential"
+
+server:
+  error:
+    include-stacktrace: always
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+
+logging:
+  level:
+    org:
+      hibernate:
+        sql: debug
+        type:
+          descriptor:
+            sql: trace
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+logging:
+  level:
+    org:
+      hibernate:
+        sql: debug
+        type:
+          descriptor:
+            sql: trace
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: stg
+
+logging:
+  level:
+    org:
+      hibernate:
+        sql: debug
+        type:
+          descriptor:
+            sql: trace
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prd
+
+logging:
+  level:
+    org:
+      hibernate:
+        sql: debug
+        type:
+          descriptor:
+            sql: trace
+

@@ -1,0 +1,26 @@
+spring:
+  config:
+    activate:
+      on-profile: local-confidential
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    url: 'jdbc:h2:mem:test'
+#    username:
+#    password: buildlaunchreserve0703@
+redis:
+  host: localhost
+  port: 6379
+  password: demo!
+  redisson-address: redis://localhost:6379
+
+auth:
+  jwt:
+    header: Authorization
+    secret: c2lsdmVycmluZycmluZy1ib2p3dC10dXRvcmlhbC1zZWNyZX90LWp1bmluZS10ZWNoLXNwib290LWQtc2lsdmVybmluZS10ZWNoLXNw3dC10dXRvcmlhbC1zZWNyZXQK
+    atkDurationMin: 180 # 개발 및 테스트 용으로 180분 설정
+    rtkDurationDay: 1 # 개발 및 테스트 용으로 1일로 설정
+
+cors:
+  allowedOrigin: "localhost"
+
+
